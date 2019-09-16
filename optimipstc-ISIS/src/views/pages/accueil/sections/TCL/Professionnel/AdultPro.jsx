@@ -53,6 +53,7 @@ export default class SectionTwo extends React.Component {
                 <Container fluid className={'container-justify'}>
                     <Row className={'row-equipe'}>
                         <Col xs="12" xl="9">
+                            <div className={'action-responsive'}>
                             <h2 className={'titre TCL'}>
                                 Le Traumatisme crânien léger chez l'adulte
                             </h2><br/><br/>
@@ -135,8 +136,8 @@ export default class SectionTwo extends React.Component {
                                 <li>faire une prise en charge symptomatique des douleurs.</li>
                             </ul>
                             <p>L'évolution est favorable dans 90% des cas en moins de 3 à 6 mois.<br/>
-                                Mais si les troubles persistent à un mois du traumatisme crânien : il faut orienter le patient vers une
-                                <strong>consultation de neurologie ou de médecine physique et réadaptation.</strong>
+                                Mais si les troubles persistent à un mois du traumatisme crânien : il faut orienter le patient vers
+                                une <strong>consultation de neurologie ou de médecine physique et réadaptation.</strong>
                                 Cela permettra d'évaluer la nécessité d'un bilan neuropsychologique et/ou d'une
                                 rééducation spécifique.<br/>
                                 <a onClick={this.triggerModalRisques} href={"#"} className={'link'}>Des facteurs de
@@ -166,6 +167,7 @@ export default class SectionTwo extends React.Component {
                                 nouveau-né, l’enfant et l’adulte: Société française de médecine d’urgence », Ann. Fr.
                                 Médecine Urgence, vol. 2, no 3, p. 199‑214, mai 2012.<br/>
                             </p>
+                            </div>
                         </Col>
                     </Row>
                     <hr/>

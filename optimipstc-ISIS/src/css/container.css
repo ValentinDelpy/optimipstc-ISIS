@@ -142,13 +142,12 @@ width-600 {
 }
 
 .card-filtres-liste{
-    margin: 10px;
     padding: 10px;
     display: flex;
     box-shadow: 1px 1px 12px #555;
     text-align: center;
     border-radius: 10px;
-    margin-left: 30%;
+    margin: 10px 10px 10px 30%;
 }
 
 .margin-right-5{
@@ -278,7 +277,7 @@ btn-equipe::selection{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #black;
+    background-color: black;
 }
 .dropdownmenu-responsive{
     font-size:2vmin;
@@ -725,6 +724,7 @@ a.button-interface:hover{
         margin:10px;
         margin-top:20px;
         padding:10px;
+        z-index: 100;
     }
 }
 @media all and (max-width:1600px) {
@@ -746,6 +746,7 @@ a.button-interface:hover{
         margin:10px;
         margin-top:20px;
         padding:10px;
+        z-index: 100;
     }
     .img-equipe {
         margin: 10px;
@@ -792,6 +793,7 @@ a.button-interface:hover{
         border-radius: 10px;
         margin:10px;
         padding:10px;
+        z-index: 100;
     }
     .row-introduction{
         margin-top:15%;
@@ -807,7 +809,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -869,7 +871,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -918,6 +920,7 @@ a.button-interface:hover{
         margin:10px;
         margin-top:20px;
         padding:10px;
+        z-index: 100;
     }
 }
 @media all and (max-width:600px){
@@ -933,7 +936,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -1007,7 +1010,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -1064,7 +1067,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -1150,7 +1153,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -1199,7 +1202,7 @@ a.button-interface:hover{
         margin:10px;
         margin-top:20px;
         padding:10px;
-
+        z-index: 100;
     }
 }
 @media all and (max-device-width:600px) {
@@ -1215,7 +1218,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {
@@ -1283,7 +1286,7 @@ a.button-interface:hover{
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #black;
+        background-color: black;
     }
 
     .img-equipe {

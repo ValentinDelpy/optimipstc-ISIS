@@ -172,7 +172,7 @@ export default class SectionTwo extends React.Component {
                             </p>
                             <p>L'évolution est favorable dans 90% des cas en moins de 3 à 6 mois.<br/>
                                 Mais si les troubles persistent à un mois du traumatisme crânien : il faut orienter le patient vers une
-                                <strong>consultation de neurologie ou de médecine physique et réadaptation. </strong>
+                                <strong> consultation de neurologie ou de médecine physique et réadaptation. </strong>
                                 Cela permettra d'évaluer la nécessité d'un bilan neuropsychologique et/ou d'une
                                 rééducation spécifique.<br/>
                                 <a onClick={this.triggerModalRisques} href={"#"} className={'link'}>Des facteurs de

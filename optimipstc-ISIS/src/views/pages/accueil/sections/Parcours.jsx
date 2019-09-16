@@ -94,7 +94,7 @@ const parcours_soins = {
                                            " - SSR spécialisé en Neurologie : prend en charge les patients atteints de pathologie neurologique qui nécessitent une rééducation intensive spécialisée\n"+
 "- SSR spécialisé en Loco-moteur\n"+
 "- SSR pédiatrique : prend en charge les enfants et adolescents. Ils allient la dimension médicale et rééducative aux aspects éducatifs, scolaires et psychologiques.\n"+
-"- Service de Médecine Physique et Réadaptation (> lien vignette service  MPR) : SSR coordonné par des médecins spécialisés en Médecine Physique et Réadaptation. \n»",
+"- Service de Médecine Physique et Réadaptation : SSR coordonné par des médecins spécialisés en Médecine Physique et Réadaptation. \n»",
                                             }]
                                     }],
                             },
@@ -178,8 +178,7 @@ const parcours_soins_enfant = {
                                 "common_child": "child_two",
                                 "size": 150,
                                 "color": "#4DB6AC",
-                                "text": "Service hospitalier qui assure la prise en charge des venues non programmées, 24h/24. Situé dans un établissement de santé public ou privé. Le patient peut se présenter de lui-même ou être amené par une ambulance, les pompiers ou le SMUR.\n" +
-                                    "Service spécialisé dans les pathologies du cerveau et du système nerveux qui nécessitent ou pourraient nécessiter d’être opéré. Les neurochirurgiens connaissent bien la pathologie du traumatisme crânien. Une hospitalisation en neurochirurgie est parfois nécessaire même si le patient n’a pas été opéré. \n",
+                                "text": "Service spécialisé dans les pathologies du cerveau et du système nerveux qui nécessitent ou pourraient nécessiter d’être opéré. Les neurochirurgiens connaissent bien la pathologie du traumatisme crânien. Une hospitalisation en neurochirurgie est parfois nécessaire même si le patient n’a pas été opéré. \n",
                             },
 
                             {
@@ -222,8 +221,12 @@ const parcours_soins_enfant = {
                                                 "common_child": null,
                                                 "size": 220,
                                                 "color": "#FF8A65",
-                                                "text": "Service spécialisé qui prend en charge la rééducation et la réadaptation des patients. Une équipe pluridisciplinaire coordonne le programme de rééducation, fixe des objectifs et prépare un projet de réinsertion avec le patient et son entourage. Dans un service de MPR neurologique l’équipe est habituellement composée de kinésithérapeute, orthophoniste, assistante sociale, ergothérapeute, psychomotricien, psychologue, neuropsychologue, médecin rééducateur.\n" +
-                                                    "Un service de MPR peut être spécialisé en pathologie neurologique, ou loco-motrice ou être polyvalent.\n",
+                                                "text": "Terme général qui regroupe différents services :\n"+
+                                                    "- SSR polyvalent : prend en charge tout type de pathologie nécessitant une rééducation\n"+
+                                                    " - SSR spécialisé en Neurologie : prend en charge les patients atteints de pathologie neurologique qui nécessitent une rééducation intensive spécialisée\n"+
+                                                    "- SSR spécialisé en Loco-moteur\n"+
+                                                    "- SSR pédiatrique : prend en charge les enfants et adolescents. Ils allient la dimension médicale et rééducative aux aspects éducatifs, scolaires et psychologiques.\n"+
+                                                    "- Service de Médecine Physique et Réadaptation : SSR coordonné par des médecins spécialisés en Médecine Physique et Réadaptation. \n»",
                                             }]
                                     }],
                             },

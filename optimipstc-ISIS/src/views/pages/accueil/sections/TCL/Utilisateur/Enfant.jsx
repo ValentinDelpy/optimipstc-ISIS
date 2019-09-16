@@ -90,6 +90,7 @@ export default class SectionTwo extends React.Component {
                     <hr/>
                     <Row>
                         <Col xs="12" xl="9" className={'col-espacement'}>
+                            <div className={'action-responsive'}>
                             <p className={'bold'}>
                                 Les signes d'alerte qui doivent vous faire consulter votre médecin traitant ou votre
                                 pédiatre:
@@ -187,6 +188,7 @@ export default class SectionTwo extends React.Component {
                                 orientera vers une consultation de
                                 neurologue ou de médecin rééducateur.
                             </p>
+                            </div>
                         </Col>
                     </Row>
                 </Container>

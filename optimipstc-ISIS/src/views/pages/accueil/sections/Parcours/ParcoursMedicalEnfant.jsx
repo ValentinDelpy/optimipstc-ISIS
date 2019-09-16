@@ -91,10 +91,21 @@ export default class SectionTwo extends React.Component {
             open21: false,
             open22: false,
             open23: false,
-            open24: false
+            open24: false,
+            modalSoutienSco: false,
+            modalSAPAD: false,
+            modalMDPH: false
         }
     }
-
+    triggerModalSoutienSco = () => {
+        this.setState({modalSoutienSco: !this.state.modalSoutienSco})
+    };
+    triggerModalMDPH = () => {
+        this.setState({modalMDPH: !this.state.modalMDPH})
+    };
+    triggerModalSAPAD = () => {
+        this.setState({modalSAPAD: !this.state.modalSAPAD})
+    };
     triggerModalMPR = () => {
         this.setState({modalMPR: !this.state.modalMPR})
     };
@@ -273,10 +284,9 @@ export default class SectionTwo extends React.Component {
     render() {
         return (
             <section className={'section'}>
-                <Container fluid className={'container-justify'}>
-                    <Row className="row-equipe">
-                        <Col xs='12' xl='6' className={'pm'}>
-                            <div className={'action-responsive'}>
+                <Container fluid  className={'container-justify'}>
+                    <Col xs='12' xl='12' className={'row-equipe'}>
+                        <div className={'action-responsive'}>
                             À l'issue de la prise en charge initiale, même si le patient est stabilisé, le suivi médical
                             et la prise en charge rééducative nécessitent d'être poursuivis. En parallèle, un parcours
                             de vie se met en place.<br/>
@@ -284,9 +294,8 @@ export default class SectionTwo extends React.Component {
                             Nous vous présentons ci-dessous les principales personnes, dispositifs et structures dont
                             vous pouvez avoir besoin.<br/>
                             Des informations supplémentaires apparaissent en cliquant sur la case correspondante.
-                            </div>
-                            </Col>
-                    </Row>
+                        </div>
+                    </Col>
                     <Row className={'justify-content-start'}>
                         <Col xs="12" xl="6">
                             <h2 className={'titre TCL'}>
@@ -309,8 +318,7 @@ export default class SectionTwo extends React.Component {
                                         <div className="text-align-parcours">
                                             <a onClick={this.triggerModalMPR}   className={'link'}> MPR
                                                 Pédiatrie </a><br/>
-                                            <a onClick={this.triggerModalUE}   className={'link'}> Unité
-                                                Eveil </a><br/>
+                                            <a onClick={this.triggerModalUE}   className={'link'}> Unité d'Eveil Pédiatrique </a><br/>
                                             <a onClick={this.triggerModalEVC}   className={'link'}> Unité
                                                 EVC-EPR </a><br/>
                                             <Button color="link" className={'button-interface'} onClick={() => {
@@ -359,7 +367,7 @@ export default class SectionTwo extends React.Component {
                                         trigger="Suivi médical" className={'clp3'}>
                                         <div className="text-align-parcours">
                                             <a onClick={this.triggerModalPedia}  
-                                               className={'link'}> Pediatre </a><br/>
+                                               className={'link'}> Pédiatre </a><br/>
                                             <a onClick={this.triggerModalNC}  
                                                className={'link'}> Neurochirurgien </a><br/>
                                             <a onClick={this.triggerModalMR}   className={'link'}> Médecin
@@ -642,6 +650,8 @@ export default class SectionTwo extends React.Component {
                                             <a onClick={this.triggerModalACPE}   className={'link'}> Aménagement
                                                 conditions de passation des examens </a><br/>
                                             <a onClick={this.triggerModalCNED}   className={'link'}> CNED </a><br/>
+                                            <a onClick={this.triggerModalSoutienSco} href={"#"} className={'link'}> Soutien Scolaire </a><br/>
+                                            <a onClick={this.triggerModalSAPAD} href={"#"} className={'link'}> SAPAD </a><br/>
                                             <Button color="link" className={'button-interface'} onClick={() => {
                                                 this.setState({open5: false});
                                             }}><img src={close} alt="Close button"></img></Button>
@@ -686,6 +696,9 @@ export default class SectionTwo extends React.Component {
                                 <Card className={'container-set'}>
                                     <h3 className={'titre'}>MDPH</h3>
                                     <div className="text-align-parcours">
+                                        <p className={'clp5'}>
+                                            <a onClick={this.triggerModalMDPH} className={'link divmdph'}>MDPH : son fonctionnement</a><br/>
+                                        </p>
                                         <p className={'clp5'}>
                                             <a onClick={this.triggerModalCMI} className={'link divmdph'}>Carte Mobilité Inclusion (CMI) </a><br/>
                                         </p>
@@ -842,14 +855,14 @@ export default class SectionTwo extends React.Component {
                 <Modal className={'tc_modal'} isOpen={this.state.modalVehic} fade={false} centered>
                     <ModalHeader>Aménagement du véhicule</ModalHeader>
                     <ModalBody>
-                        - Le handicap nécessite de modifier le poste de conduite <br/><br/>
+                        Le handicap nécessite de modifier le poste de conduite <br/><br/>
                         Pour qui : personne titulaire du permis de conduire ET portant la mention restrictive d'un poste de conduite adapté.
                         <br/>
                         Prise en charge : PCH aménagement du véhicule, assurance, CPAM, AGEFIPH si le véhicule est utilisé pour le travail.
                         <br/>
                         Comment : demande sur le certificat MDPH pour obtenir la PCH. Demande des dossiers spécifiques pour les autres organismes.
-                        <br/>
-                        - Le handicap nécessite un aménagement de véhicule pour le passager. Par exemple : rampe d’accès, treuil). Seul certaines assurances prendront en charge ce type d’aménagement.<br/>
+                        <br/><br/>
+                        Le handicap nécessite un aménagement de véhicule pour le passager. Par exemple : rampe d’accès, treuil). Seul certaines assurances prendront en charge ce type d’aménagement.<br/>
                         Prise en charge : PCH aménagement du véhicule ou certaines assurances.
                     </ModalBody>
                     <ModalFooter>
@@ -958,7 +971,9 @@ export default class SectionTwo extends React.Component {
                 <Modal className={'tc_modal'} isOpen={this.state.modalSport} fade={false} centered>
                     <ModalHeader>Sport et loisirs adaptés</ModalHeader>
                     <ModalBody>
-                        Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.
+                        Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.<br/>
+                        Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href="https://www.haute-garonne.fr/sites/default/files/cd31_guide_services_a_domicile_paph.pdf" target="_blank"> l’agglomération toulousaine. </a><br/>
+                        Et vous pouvez également trouver des informations sur l’annuaire Handi Sport, qui est moins détaillé mais couvre l’ensemble de la <a href='https://f2.quomodo.com/682C5CED/uploads/1059/Annuaire%202019%20par%20discipline.pdf' target='_blank'> Haute Garonne.</a>
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalSport} className={'buttonSecondary'}>Fermer</Button>
@@ -1163,9 +1178,9 @@ export default class SectionTwo extends React.Component {
                     </ModalFooter>
                 </Modal>
                 <Modal className={'tc_modal'} isOpen={this.state.modalPedia} fade={false} centered>
-                    <ModalHeader>Pediatre</ModalHeader>
+                    <ModalHeader>Pédiatre</ModalHeader>
                     <ModalBody>
-                        WIP
+                        Médecin spécialiste dans la prise en charge des enfants et des adolescents
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalPedia} className={'buttonSecondary'}>Fermer</Button>
@@ -1225,7 +1240,7 @@ export default class SectionTwo extends React.Component {
                 <Modal className={'tc_modal'} isOpen={this.state.modalPsychiatre} fade={false} centered>
                     <ModalHeader>Psychiatre</ModalHeader>
                     <ModalBody>
-                        Un suivi par un psychiatre peut être proposé pour aider l’enfant et son entourage sur le plan psychologique, et/ou pour prendre en charge des troubles du comportement, une dépression.                      </ModalBody>
+                        Un suivi par un psychiatre peut être proposé pour aider le patient et son entourage sur le plan psychologique, et/ou pour prendre en charge des troubles du comportement, une dépression.                      </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalPsychiatre} className={'buttonSecondary'}>Fermer</Button>
                     </ModalFooter>
@@ -1259,6 +1274,43 @@ export default class SectionTwo extends React.Component {
                         En cas de situation grave qui met en danger la personne ou son entourage à court terme, vous devez appeler le 15 qui vous aidera à gérer la situation et vous indiquera le service le plus adapté.                    </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalUrPsy} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalSoutienSco} fade={false} centered>
+                    <ModalHeader>Soutien scolaire</ModalHeader>
+                    <ModalBody>
+                        Le
+                        <a onClick={this.triggerModalSESSAD}
+                           className={'link'}> SESSAD </a> apporte un soutien scolaire. Des associations peuvent également proposer des cours de soutien scolaire. Certains contrats d’assurance prévoient une prise en charge de soutien scolaire en cas de problème de santé de l’enfant.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalSoutienSco} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalSAPAD} fade={false} centered>
+                    <ModalHeader>Service d'Assistance Pédagogique à Domicile</ModalHeader>
+                    <ModalBody>
+                        Il s’agit d’un dispositif de l'Éducation nationale destiné à fournir une prise en charge pédagogique au domicile pour assurer la continuité de la scolarité pendant un problème de santé. Il va adapter la scolarité pour poursuivre les apprentissages, maintenir les liens avec la classe et les enseignants, éviter l’isolement. L’intervention peut être à domicile, à l’hôpital ou en centre de rééducation.
+                        <br/><br/>
+                        Pour qui : tout élève, enfants ou adolescents, dont la scolarité est interrompue pendant plus de 2 semaines suite à un problème de santé.
+                        <br/><br/>
+                        Comment : la demande peut être faite par : la famille, l'établissement scolaire, les services médicaux, les services sociaux. Elle se fait auprès des services départementaux de l’ Education Nationale.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalSAPAD} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalMDPH} fade={false} centered>
+                    <ModalHeader>MDPH : son fonctionnement</ModalHeader>
+                    <ModalBody>
+                        Service public créé en 2005, les Maisons Départementales des Personnes Handicapées (MDPH) sont chargées de l’accueil et de l’accompagnement des personnes handicapées et de leurs proches. Il existe une MDPH dans chaque département, fonctionnant comme un guichet unique pour toutes les démarches liées aux diverses situations de handicap.
+                        <br/><br/>
+                        Pour les demandes d’attribution des aides et prestations, ou pour une orientation vers un établissement médico-social, il faut remplir le dossier unique de la MDPH. Il y a une partie administrative et un certificat médical qui doit être rempli par votre médecin. Le dossier est ensuite examiné par la Commission des Droits et de l’Autonomie des Personnes Handicapées (CDAPH) qui décide de l’orientation et de l’attribution de l’ensemble des aides et prestations.
+                        <br/><br/>
+                        Plus d'informations <a href="http://www.mdph.fr" target="_blank">ici.</a>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalMDPH} className={'buttonSecondary'}>Fermer</Button>
                     </ModalFooter>
                 </Modal>
             </section>

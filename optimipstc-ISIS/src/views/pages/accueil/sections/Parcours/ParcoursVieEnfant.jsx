@@ -641,7 +641,7 @@ export default class SectionTwo extends React.Component {
                     </ModalFooter>
                 </Modal>
                 <Modal className={'tc_modal'} isOpen={this.state.modalSport} fade={false} centered>
-                    <ModalHeader>Sport, loisirs</ModalHeader>
+                    <ModalHeader>Sport, loisirs adaptés</ModalHeader>
                     <ModalBody>
                         Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.<br/>
                         Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href="https://www.haute-garonne.fr/sites/default/files/cd31_guide_services_a_domicile_paph.pdf" target="_blank"> l’agglomération toulousaine. </a><br/>

@@ -80,7 +80,6 @@ export default class SectionTwo extends React.Component {
             modalEVC: false,
             modalPsychiatre: false,
             modalCMP: false,
-            modalCMPP: false,
             modalUrPsy: false,
             open1: false,
             open2: false,
@@ -97,23 +96,47 @@ export default class SectionTwo extends React.Component {
             open21: false,
             open22: false,
             open23: false,
-            open24: false
+            open24: false,
+            modalMDPH: false,
+            modalAccueilJour: false,
+            modalLogement: false,
+            modalHandi: false,
+            modalEntreprises: false,
+            modalDEA: false
         }
     }
+    triggerModalDEA = () => {
+        this.setState({modalDEA: !this.state.modalDEA})
+    };
 
+    triggerModalEntreprises = () => {
+        this.setState({modalEntreprises: !this.state.modalEntreprise})
+    };
+
+    triggerModalHandi = () => {
+        this.setState({modalHandi: !this.state.modalHandi})
+    };
+
+    triggerModalAccueilJour = () => {
+        this.setState({modalAccueilJour: !this.state.modalAccueilJour})
+    };
+
+    triggerModalLogement = () => {
+        this.setState({modalLogement: !this.state.modalLogement})
+    };
     triggerModalAuxVie = () => {
         this.setState({modalAuxVie: !this.state.modalAuxVie})
     };
-
+    triggerModalMDPH = () => {
+        this.setState({modalMDPH: !this.state.modalMDPH})
+    };
     triggerModalPsychiatre = () => {
         this.setState({modalPsychiatre: !this.state.modalPsychiatre})
     };
     triggerModalCMP = () => {
         this.setState({modalCMP: !this.state.modalCMP})
     };
-    triggerModalCMPP = () => {
-        this.setState({modalCMPP: !this.state.modalCMPP})
-    };
+
     triggerModalUrPsy = () => {
         this.setState({modalUrPsy: !this.state.modalUrPsy})
     };
@@ -287,8 +310,7 @@ export default class SectionTwo extends React.Component {
         return (
             <section className={'section'}>
                 <Container fluid  className={'container-justify'}>
-                    <Row className="row-equipe">
-                        <Col xs='12' xl='12' className={'pm'}>
+                        <Col xs='12' xl='12' className={'row-equipe'}>
                             <div className={'action-responsive'}>
                                 À l'issue de la prise en charge initiale, même si le patient est stabilisé, le suivi médical
                                 et la prise en charge rééducative nécessitent d'être poursuivis. En parallèle, un parcours
@@ -299,7 +321,6 @@ export default class SectionTwo extends React.Component {
                                 Des informations supplémentaires apparaissent en cliquant sur la case correspondante.
                             </div>
                         </Col>
-                    </Row>
                     <Row>
                         <Col xs="12" xl="6">
                             <h2 className={'titre TCL'}>
@@ -406,7 +427,6 @@ export default class SectionTwo extends React.Component {
                                            className={'link'}> Psychiatre </a><br/>
                                         <a onClick={this.triggerModalCMP}
                                            className={'link'}> CMP </a><br/>
-                                        <a onClick={this.triggerModalCMPP}   className={'link'}> CMPP </a><br/>
                                         <a onClick={this.triggerModalUrPsy}
                                            className={'link'}> Urgences Psychiatriques </a><br/>
                                         <Button color="link" className={'button-interface'} onClick={() => {
@@ -553,6 +573,8 @@ export default class SectionTwo extends React.Component {
                                             déplacements </a><br/>
                                         <a onClick={this.triggerModalSport} className={'link'}> Sport,
                                             loisirs adaptés </a><br/>
+                                        <a onClick={this.triggerModalAccueilJour} href={"#"} className={'link'}> Service d'accueil de jour</a><br/>
+                                        <a onClick={this.triggerModalLogement} href={"#"} className={'link'}> Foyer appartement et Logements partagés</a><br/>
                                         <Button color="link" className={'button-interface'} onClick={() => {
                                             this.setState({open4: false});
                                         }}><img src={close} alt="Close button"></img></Button>
@@ -582,7 +604,8 @@ export default class SectionTwo extends React.Component {
                                     <div className="text-align-parcours">
                                         <a onClick={this.triggerModalMAS} className={'link'}> MAS </a><br/>
                                         <a onClick={this.triggerModalFAM} className={'link'}> FAM </a><br/>
-                                        <a onClick={this.triggerModalFoyer} className={'link'}> Foyer de vie </a><br/>
+                                        <a onClick={this.triggerModalFoyer} className={'link'}> Foyer de vie </a>
+                                        <a onClick={this.triggerModalHandi} href={"#"} className={'link'}> Unité pour Personnes Handicapées Vieillissantes </a><br/>
                                         <Button color="link" className={'button-interface'} onClick={() => {
                                             this.setState({open5: false});
                                         }}><img src={close} alt="Close button"></img></Button>
@@ -647,8 +670,8 @@ export default class SectionTwo extends React.Component {
                                             travail </a><br/>
                                         <a onClick={this.triggerModalAdapt} className={'link'}> Adaptation de
                                             poste </a><br/>
-                                        <a onClick={this.triggerModalESAT} className={'link'}> Atelier protégé
-                                            ESAT </a><br/><br/>
+                                        <a onClick={this.triggerModalEntreprises} href={"#"} className={'link'}> Entreprises adaptées </a><br/>
+                                        <a onClick={this.triggerModalESAT} href={"#"} className={'link'}> ESAT </a><br/><br/>
                                         <Button color="link" className={'button-interface'} onClick={() => {
                                             this.setState({open6: false});
                                         }}><img src={close} alt="Close button"></img></Button>
@@ -682,6 +705,7 @@ export default class SectionTwo extends React.Component {
                                            className={'link'}> COMETE </a><br/>
                                         <a onClick={this.triggerModalCAPE} className={'link'}> CAP
                                             EMPLOI </a><br/>
+                                        <a onClick={this.triggerModalDEA} href={"#"} className={'link'}> Dispositif emplois accompagnés </a><br/>
                                         <Button color="link" className={'button-interface'} onClick={() => {
                                             this.setState({open7: false});
                                         }}><img src={close} alt="Close button"></img></Button>
@@ -691,6 +715,9 @@ export default class SectionTwo extends React.Component {
                             <Card className={'container-set'}>
                                 <h3 className={'titre'}>MDPH</h3>
                                     <div className="text-align-parcours">
+                                        <p className={'clp5'}>
+                                            <a onClick={this.triggerModalMDPH} className={'link divmdph'}>MDPH : son fonctionnement</a><br/>
+                                        </p>
                                         <p className={'clp5'}>
                                         <a onClick={this.triggerModalCMI} className={'link divmdph'}>Carte Mobilité Inclusion (CMI) </a><br/>
                                         </p>
@@ -851,14 +878,14 @@ export default class SectionTwo extends React.Component {
                 <Modal className={'tc_modal'} isOpen={this.state.modalVehic} fade={false} centered>
                     <ModalHeader>Aménagement du véhicule</ModalHeader>
                     <ModalBody>
-                        - Le handicap nécessite de modifier le poste de conduite <br/><br/>
+                        Le handicap nécessite de modifier le poste de conduite <br/><br/>
                         Pour qui : personne titulaire du permis de conduire ET portant la mention restrictive d'un poste de conduite adapté.
                         <br/>
                         Prise en charge : PCH aménagement du véhicule, assurance, CPAM, AGEFIPH si le véhicule est utilisé pour le travail.
                         <br/>
                         Comment : demande sur le certificat MDPH pour obtenir la PCH. Demande des dossiers spécifiques pour les autres organismes.
-                        <br/>
-                        - Le handicap nécessite un aménagement de véhicule pour le passager. Par exemple : rampe d’accès, treuil). Seul certaines assurances prendront en charge ce type d’aménagement.<br/>
+                        <br/><br/>
+                        Le handicap nécessite un aménagement de véhicule pour le passager. Par exemple : rampe d’accès, treuil). Seul certaines assurances prendront en charge ce type d’aménagement.<br/>
                         Prise en charge : PCH aménagement du véhicule ou certaines assurances.
                     </ModalBody>
                     <ModalFooter>
@@ -962,7 +989,9 @@ export default class SectionTwo extends React.Component {
                 <Modal className={'tc_modal'} isOpen={this.state.modalSport} fade={false} centered>
                     <ModalHeader>Sport et loisirs adaptés</ModalHeader>
                     <ModalBody>
-                        Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.
+                        Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.<br/>
+                        Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href="https://www.haute-garonne.fr/sites/default/files/cd31_guide_services_a_domicile_paph.pdf" target="_blank"> l’agglomération toulousaine. </a><br/>
+                        Et vous pouvez également trouver des informations sur l’annuaire Handi Sport, qui est moins détaillé mais couvre l’ensemble de la <a href='https://f2.quomodo.com/682C5CED/uploads/1059/Annuaire%202019%20par%20discipline.pdf' target='_blank'> Haute Garonne.</a>
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalSport} className={'buttonSecondary'}>Fermer</Button>
@@ -988,8 +1017,10 @@ export default class SectionTwo extends React.Component {
                         par exemple). Cela doit être discuté avec l’employeur et le médecin du travail ; un certificat
                         médical justifiant l’état de santé peut être demandé.<br/>
                         L’entreprise peut obtenir des aides financières via l’Agefiph pour réaliser les aménagements ou
-                        acheter du matériel adapté.<br/>
-
+                        acheter du matériel adapté.<br/><br/>
+                        Il peut être demandé une <a href="#" onClick={()=> {
+                        this.triggerModalRQTH();
+                    }}>RQTH</a> afin de justifier de l’aménagement de poste auprès de l’organisme financeur.
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalAdapt} className={'buttonSecondary'}>Fermer</Button>
@@ -1012,6 +1043,19 @@ export default class SectionTwo extends React.Component {
                     </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalESAT} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalMDPH} fade={false} centered>
+                    <ModalHeader>MDPH : son fonctionnement</ModalHeader>
+                    <ModalBody>
+                        Service public créé en 2005, les Maisons Départementales des Personnes Handicapées (MDPH) sont chargées de l’accueil et de l’accompagnement des personnes handicapées et de leurs proches. Il existe une MDPH dans chaque département, fonctionnant comme un guichet unique pour toutes les démarches liées aux diverses situations de handicap.
+                        <br/><br/>
+                        Pour les demandes d’attribution des aides et prestations, ou pour une orientation vers un établissement médico-social, il faut remplir le dossier unique de la MDPH. Il y a une partie administrative et un certificat médical qui doit être rempli par votre médecin. Le dossier est ensuite examiné par la Commission des Droits et de l’Autonomie des Personnes Handicapées (CDAPH) qui décide de l’orientation et de l’attribution de l’ensemble des aides et prestations.
+                        <br/><br/>
+                        Plus d'informations <a href="http://www.mdph.fr" target="_blank">ici.</a>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalMDPH} className={'buttonSecondary'}>Fermer</Button>
                     </ModalFooter>
                 </Modal>
                 <Modal className={'tc_modal'} isOpen={this.state.modalUEROS} fade={false} centered>
@@ -1056,7 +1100,7 @@ export default class SectionTwo extends React.Component {
                         Pour qui : les entreprises et les personnes reconnues travailleur handicapé <a href="#" onClick={()=> {
                             this.triggerModalCAPE();
                             this.triggerModalRQTH();
-                    }}>(RQTH)</a> par la
+                    }}>RQTH</a> par la
                         MDPH<br/>
                         Comment : faire la demande auprès de la MDPH puis de votre conseiller Cap Emploi<br/>
                     </ModalBody>
@@ -1324,7 +1368,7 @@ export default class SectionTwo extends React.Component {
                                 ou vers un centre de rééducation professionnelle.
                             </li>
                         </ul><br/>
-                        Pour qui : « toute personne dont les possibilités d’obtenir ou de conserver un emploi sont effectivement réduites par suite de l’altération d’une ou plusieurs fonctions physique, sensorielle, mentale ou psychique ».<br/><br/>
+                        Pour qui : « toute personne dont les possibilités d’obtenir ou de conserver un emploi sont effectivement réduites par l’altération d’une ou plusieurs fonctions physique, sensorielle, mentale ou psychique ».<br/><br/>
                         Comment : : la demande est faite sur le dossier de la MDPH. La MDPH peut vous demander d'effectuer une visite médicale.
                     </ModalBody>
                     <ModalFooter>
@@ -1390,24 +1434,64 @@ export default class SectionTwo extends React.Component {
                         <Button onClick={this.triggerModalCMP} className={'buttonSecondary'}>Fermer</Button>
                     </ModalFooter>
                 </Modal>
-                <Modal className={'tc_modal'} isOpen={this.state.modalCMPP} fade={false} centered>
-                    <ModalHeader>Centre Médico-Psycho-Pédagogique</ModalHeader>
-                    <ModalBody>
-                        Le CMPP s’adresse aux enfants et adolescents jusqu’à 20 ans qui éprouvent des difficultés d'apprentissage, des troubles psychomoteurs, du langage ou des troubles du comportement, en famille ou à l’école. Après une évaluation en consultation, des bilans complémentaires peuvent être proposés ; puis une prise en charge adaptée est discutée avec la famille et l’enfant, par exemple des séances de rééducation.
-                        Comment : demande par la famille, ou proposée par un médecin, travailleur social, enseignant.
-                        <br/><br/>
-                        Prise en charge : Sécurité Sociale
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button onClick={this.triggerModalCMPP} className={'buttonSecondary'}>Fermer</Button>
-                    </ModalFooter>
-                </Modal>
                 <Modal className={'tc_modal'} isOpen={this.state.modalUrPsy} fade={false} centered>
                     <ModalHeader>Urgences Psychiatriques</ModalHeader>
                     <ModalBody>
                         En cas de situation grave qui met en danger la personne ou son entourage à court terme, vous devez appeler le 15 qui vous aidera à gérer la situation et vous indiquera le service le plus adapté.                    </ModalBody>
                     <ModalFooter>
                         <Button onClick={this.triggerModalUrPsy} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalAccueilJour} fade={false} centered>
+                    <ModalHeader>Service d'accueil de jour</ModalHeader>
+                    <ModalBody>
+                        Accueil des adultes handicapés sur demi-journées ou journées entières pour y réaliser des activités en groupe et aider à la réalisation d’un projet de vie. Ces structures ne sont pas médicalisées.<br/><br/>
+                        Pour qui : adulte de 20 à 60 ans en situation de handicap, ayant une autonomie suffisante pour participer à des activités en groupe.<br/><br/>
+                        Comment : demande MDPH via le formulaire spécifique (certificat MDPH)
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalAccueilJour} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalLogement} fade={false} centered>
+                    <ModalHeader>Foyer appartement et Logements partagés</ModalHeader>
+                    <ModalBody>
+                        Différents types de structures existent. Elles sont associatives ou privées. Leur objectif est de permettre une indépendance et une autonomie tout en apportant l’aide adaptée aux difficultés de chacun. Il peut s’agir d’aides à domicile 24h/24 dont les coûts sont partagés par plusieurs habitants, d’une colocation permettant une mise en commun des aides humaines, techniques et de l’entraide, etc… Il faut contacter directement les structures pour connaitre leur fonctionnement et savoir si elles correspondent à votre situation.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalLogement} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalHandi} fade={false} centered>
+                    <ModalHeader>Unité pour Personnes Handicapées Vieillissantes</ModalHeader>
+                    <ModalBody>
+                        Elle accueille des personnes handicapées de plus de 60 ans qui résidaient en établissement pour personnes handicapées (FAM, Foyers Occupationnels...). Il s’agit d’une unité spécifique au sein d’un Etablissement d’Hébergement pour Personnes Agées Dépendantes (EHPAD). Il en existe plusieurs en Hérault mais pas encore dans les autres départements d’Occitanie.                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalHandi} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalEntreprises} fade={false} centered>
+                    <ModalHeader>Enteprises adaptées</ModalHeader>
+                    <ModalBody>
+                        Il s’agit d’entreprises qui fonctionnent comme une entreprise en milieu ordinaire, mais au moins 80 % des effectifs se composent de personnes en situation de handicap. Elle propose un accompagnement spécifique favorisant la réalisation d'un projet professionnel. La rentabilité exigée est plus grande qu’en ESAT.<br/><br/>
+                        Pour qui : personne en situation de handicap avec une capacité de travail d’au moins 1/3 de celle d'une personne valide.<br/><br/>
+                        Comment : il faut obtenir la « notification RQTH avec orientation vers le marché du travail » qui est demandée sur le certificat de la MDPH rempli par le médecin. Puis le recrutement en entreprise adaptée se fait sur proposition de Pôle emploi ou de Cap emploi. Le recrutement peut être fait directement par l’entreprise adaptée si le salarié sort d'un Ésat ou change d'entreprise adaptée.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalEntreprises} className={'buttonSecondary'}>Fermer</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal className={'tc_modal'} isOpen={this.state.modalDEA} fade={false} centered>
+                    <ModalHeader>Dispositif emplois accompagnés</ModalHeader>
+                    <ModalBody>
+                        C’est un dispositif qui doit permettre aux adultes handicapés d’obtenir et de garder un emploi rémunéré. Il doit soutenir et accompagner le salarié ainsi que l’employeur.<br/>
+                        Il intervient en complément des services déjà existants (Cap Emploi, Agefiph…) et a la particularité de suivre la personne tout au long de son parcours y compris lorsqu’elle est en poste.<br/><br/>
+                        Pour qui : adultes en situation de handicap avec notification RQTH (Reconnaissance de la qualité de travailleur handicapé : plus de détail dans la page Parcours de Soins) ou travaillant en ESAT et ayant un projet d’insertion en milieu ordinaire de travail.<br/><br/>
+                        Comment : demande d’orientation sur le certificat MDPH rempli par le médecin. La commission de la MDPH prendra la décision.<br/><br/>
+                        Pour plus de détails, cliquer <a href="https://travail-emploi.gouv.fr/emploi/emploi-et-handicap/article/emploi-et-handicap-le-dispositif-de-l-emploi-accompagne" target='_blank'> ici</a>.
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={this.triggerModalDEA} className={'buttonSecondary'}>Fermer</Button>
                     </ModalFooter>
                 </Modal>
             </section>
