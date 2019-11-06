@@ -211,7 +211,7 @@ export default class TCSevere extends React.Component {
                                                 this.state.viewport.zoom = 7;
                                                 this.setState({filtre: "Réinsertion Professionnelle"});
                                                 this.setState({filtre_age: "Aucun"});
-                                            }}><button className="marker-btn"><img src={img_pro} alt="Structure"/></button>SRéinsertion Professionnelle</DropdownItem>
+                                            }}><button className="marker-btn"><img src={img_pro} alt="Structure"/></button>Réinsertion Professionnelle</DropdownItem>
                                             <DropdownItem onClick={(e) => {
                                                 e.preventDefault();
                                                 // eslint-disable-next-line no-undef
@@ -341,7 +341,7 @@ export default class TCSevere extends React.Component {
                                     else if(structure.properties.categorie.includes("Services de Médecine & Chirurgie")){
                                         icon = img_hos;
                                     }
-                                    else if(structure.properties.categorie.includes("SRéinsertion Professionnelle")){
+                                    else if(structure.properties.categorie.includes("Réinsertion Professionnelle")){
                                         icon = img_pro;
                                     }
                                     else if(structure.properties.categorie.includes("Service d'Accompagnement à Domicile")){

@@ -28,6 +28,8 @@ import imt from "../../../../../assets/images/imt.jpg";
 import inserm from "../../../../../assets/images/inserm.jpg";
 import ymca from "../../../../../assets/images/ymca.jpg";
 import unaftc from "../../../../../assets/images/unaftc.png";
+import associations from "../../../../../../src/documents/associations.pdf"
+
 import close from "../../../../../assets/images/close-button.png";
 
 export default class SectionTwo extends React.Component {
@@ -309,7 +311,8 @@ export default class SectionTwo extends React.Component {
     render() {
         return (
             <section className={'section'}>
-                <Container fluid  className={'container-justify'}>
+                <Container fluid className={'container-justify'}>
+                    <Row>
                         <Col xs='12' xl='12' className={'row-equipe'}>
                             <div className={'action-responsive'}>
                                 À l'issue de la prise en charge initiale, même si le patient est stabilisé, le suivi médical
@@ -321,6 +324,7 @@ export default class SectionTwo extends React.Component {
                                 Des informations supplémentaires apparaissent en cliquant sur la case correspondante.
                             </div>
                         </Col>
+                    </Row>
                     <Row>
                         <Col xs="12" xl="6">
                             <h2 className={'titre TCL'}>
@@ -990,7 +994,7 @@ export default class SectionTwo extends React.Component {
                     <ModalHeader>Sport et loisirs adaptés</ModalHeader>
                     <ModalBody>
                         Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.<br/>
-                        Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href="https://www.haute-garonne.fr/sites/default/files/cd31_guide_services_a_domicile_paph.pdf" target="_blank"> l’agglomération toulousaine. </a><br/>
+                        Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href={associations} target="_blank"> l’agglomération toulousaine. </a><br/>
                         Et vous pouvez également trouver des informations sur l’annuaire Handi Sport, qui est moins détaillé mais couvre l’ensemble de la <a href='https://f2.quomodo.com/682C5CED/uploads/1059/Annuaire%202019%20par%20discipline.pdf' target='_blank'> Haute Garonne.</a>
                     </ModalBody>
                     <ModalFooter>

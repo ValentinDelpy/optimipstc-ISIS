@@ -17,6 +17,7 @@ import '../../../../../css/container.css'
 import header2 from "../../../../../assets/images/header2.png";
 import doctor from "../../../../../assets/images/doctor.png";
 import child from "../../../../../assets/images/child.png";
+import associations from "../../../../../../src/documents/associations.pdf"
 import Collapsible from "react-collapsible";
 import close from "../../../../../assets/images/close-button.png";
 
@@ -284,7 +285,8 @@ export default class SectionTwo extends React.Component {
     render() {
         return (
             <section className={'section'}>
-                <Container fluid  className={'container-justify'}>
+                <Container fluid className={'container-justify'}>
+                    <Row>
                     <Col xs='12' xl='12' className={'row-equipe'}>
                         <div className={'action-responsive'}>
                             À l'issue de la prise en charge initiale, même si le patient est stabilisé, le suivi médical
@@ -296,7 +298,8 @@ export default class SectionTwo extends React.Component {
                             Des informations supplémentaires apparaissent en cliquant sur la case correspondante.
                         </div>
                     </Col>
-                    <Row className={'justify-content-start'}>
+                    </Row>
+                    <Row>
                         <Col xs="12" xl="6">
                             <h2 className={'titre TCL'}>
                                 Parcours médical
@@ -337,15 +340,15 @@ export default class SectionTwo extends React.Component {
                                                      this.setState({open22: false})}
                                                  trigger="Rééducateurs" className={'clp2'}>
                                         <div className="text-align-parcours">
-                                            <a onClick={this.triggerModalKine}  
+                                            <a onClick={this.triggerModalKine}
                                                className={'link'}> Kinésithérapeute </a><br/>
-                                            <a onClick={this.triggerModalErgo}  
+                                            <a onClick={this.triggerModalErgo}
                                                className={'link'}> Ergothérapeute </a><br/>
-                                            <a onClick={this.triggerModalOrtho}  
+                                            <a onClick={this.triggerModalOrtho}
                                                className={'link'}> Orthophoniste </a><br/>
-                                            <a onClick={this.triggerModalOTP}  
+                                            <a onClick={this.triggerModalOTP}
                                                className={'link'}> Orthoptiste </a><br/>
-                                            <a onClick={this.triggerModalPM}  
+                                            <a onClick={this.triggerModalPM}
                                                className={'link'}> Psychomotricien </a><br/>
                                             <Button color="link" className={'button-interface'} onClick={() => {
                                                 this.setState({open22: false});
@@ -366,13 +369,13 @@ export default class SectionTwo extends React.Component {
                                         }}
                                         trigger="Suivi médical" className={'clp3'}>
                                         <div className="text-align-parcours">
-                                            <a onClick={this.triggerModalPedia}  
+                                            <a onClick={this.triggerModalPedia}
                                                className={'link'}> Pédiatre </a><br/>
-                                            <a onClick={this.triggerModalNC}  
+                                            <a onClick={this.triggerModalNC}
                                                className={'link'}> Neurochirurgien </a><br/>
                                             <a onClick={this.triggerModalMR}   className={'link'}> Médecin
                                                 de MPR </a><br/>
-                                            <a onClick={this.triggerModalNeuroP}  
+                                            <a onClick={this.triggerModalNeuroP}
                                                className={'link'}> Neuropédiatre </a><br/>
                                             <a onClick={this.triggerModalMT}   className={'link'}> Médecin
                                                 traitant </a><br/>
@@ -445,11 +448,11 @@ export default class SectionTwo extends React.Component {
                                             }}
                                             trigger="Aides humaines" className={'clp1'}>
                                             <div className="text-align-parcours">
-                                                <a onClick={this.triggerModalAuxVie}  
+                                                <a onClick={this.triggerModalAuxVie}
                                                    className={'link'}> Auxilaire de vie </a><br/>
-                                                <a onClick={this.triggerModalIDE}  
+                                                <a onClick={this.triggerModalIDE}
                                                    className={'link'}> Infirmier(e) </a><br/>
-                                                <a onClick={this.triggerModalAidant}  
+                                                <a onClick={this.triggerModalAidant}
                                                    className={'link'}> Aidant </a><br/>
                                                 <Button color="link" className={'button-interface'} onClick={() => {
                                                     this.setState({open1: false});
@@ -509,9 +512,9 @@ export default class SectionTwo extends React.Component {
                                             }}
                                             trigger="Aides matérielles" className={'clp3'}>
                                             <div className="text-align-parcours">
-                                                <a onClick={this.triggerModalAmenLog}  
+                                                <a onClick={this.triggerModalAmenLog}
                                                    className={'link'}> Aménagement du logement </a><br/>
-                                                <a onClick={this.triggerModalVehic}  
+                                                <a onClick={this.triggerModalVehic}
                                                    className={'link'}> Aménagement du véhicule  </a><br/>
                                                 <a onClick={this.triggerModalMM}   className={'link'}> Matériel
                                                     médical </a><br/>
@@ -972,7 +975,7 @@ export default class SectionTwo extends React.Component {
                     <ModalHeader>Sport et loisirs adaptés</ModalHeader>
                     <ModalBody>
                         Des structures (centres sportifs, associations…) proposent des sports ou des activités de loisirs adaptées au handicap moteur ou cognitif.<br/>
-                        Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href="https://www.haute-garonne.fr/sites/default/files/cd31_guide_services_a_domicile_paph.pdf" target="_blank"> l’agglomération toulousaine. </a><br/>
+                        Un recensement détaillé des associations de sports et loisirs adaptés a été réalisé pour <a href={associations} target="_blank"> l’agglomération toulousaine. </a><br/>
                         Et vous pouvez également trouver des informations sur l’annuaire Handi Sport, qui est moins détaillé mais couvre l’ensemble de la <a href='https://f2.quomodo.com/682C5CED/uploads/1059/Annuaire%202019%20par%20discipline.pdf' target='_blank'> Haute Garonne.</a>
                     </ModalBody>
                     <ModalFooter>

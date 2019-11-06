@@ -421,16 +421,18 @@ a.button-interface:hover{
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
-    width: 75%;
-    height: 75%;
+    width: 50vw;
+    height: 50vh;
+    max-width: 75%;
+    max-height: 75%;
     box-shadow: 1px 1px 12px #555;
     -webkit-transition: .2s ease-in-out;
     -moz-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
 }
 .img-avatar-ms{
-    width: 50%;
-    height: 50%;
+    width: 15vw;
+    height: 25vh;
     box-shadow: 1px 1px 12px #555;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
