@@ -54,7 +54,7 @@
     "mdbreact": "^4.19.2",
     "medium-draft": "^0.5.18",
     "megadraft": "^0.6.7",
-    "nodemailer": "^6.3.0",
+    "nodemailer": "^6.4.16",
     "nodemailer-react": "^0.1.0",
     "popper.js": "^1.15.0",
     "react": "^16.9.0",
